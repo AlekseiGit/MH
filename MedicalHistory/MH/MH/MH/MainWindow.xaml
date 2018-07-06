@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MH"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Электронная система ведения пациентов" Height="550" Width="800">
     <Grid>
-        
+        <Grid ShowGridLines="False" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.35*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="CategoryListBox" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalContentAlignment="Bottom" FontSize="18" FontFamily="Aharoni" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBoxItem x:Name="a1" Content="Регистрация" Height="30"/>
+                <ListBoxItem x:Name="a2" Content="Анамнез болезни" Height="30"/>
+                <ListBoxItem x:Name="a3" Content="Анамнез жизни" Height="30"/>
+                <ListBoxItem x:Name="a4" Content="Осмотры" Height="30"/>
+                <ListBoxItem x:Name="a5" Content="Лечение" Height="30"/>
+                <ListBoxItem x:Name="a6" Content="Обследования" Height="30"/>
+                <ListBoxItem x:Name="a7" Content="Диагноз и рекомендации" Height="30"/>
+                <ListBoxItem x:Name="a8" Content="Документы" Height="30"/>
+                <ListBoxItem x:Name="a9" Content="Записать в базу" Height="30"/>
+                <ListBoxItem x:Name="a10" Content="Новый пациент" Height="30"/>
+            </ListBox>
+            <DataGrid x:Name="PatientsGrid" IsReadOnly="True" Grid.Column="1" Grid.Row="0" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+            <TabControl Grid.Column="1" Grid.Row="1">
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
     </Grid>
 </Window>
