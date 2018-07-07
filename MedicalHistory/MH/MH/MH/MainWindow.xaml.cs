@@ -38,6 +38,7 @@ namespace MH
         {
             var patients = Core.GetAllPatients();
             PatientsGrid.ItemsSource = patients;
+            PatientsCountBox.Content = "Пациентов в базе данных: " + patients.Count;
         }
 
 

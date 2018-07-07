@@ -10,13 +10,14 @@
         <Grid ShowGridLines="False" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.35*"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="280"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="CategoryListBox" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalContentAlignment="Bottom" FontSize="18" FontFamily="Aharoni" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox x:Name="CategoryListBox" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" VerticalContentAlignment="Bottom" FontSize="18" FontFamily="Aharoni" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" SelectionChanged="ListBox_SelectionChanged">
                 <ListBoxItem x:Name="a1" Content="Регистрация" Height="30"/>
                 <ListBoxItem x:Name="a2" Content="Анамнез болезни" Height="30"/>
                 <ListBoxItem x:Name="a3" Content="Анамнез жизни" Height="30"/>
@@ -28,10 +29,269 @@
                 <ListBoxItem x:Name="a9" Content="Записать в базу" Height="30"/>
                 <ListBoxItem x:Name="a10" Content="Новый пациент" Height="30"/>
             </ListBox>
-            <DataGrid x:Name="PatientsGrid" IsReadOnly="True" Grid.Column="1" Grid.Row="0" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-            <TabControl Grid.Column="1" Grid.Row="1">
+            <DataGrid x:Name="PatientsGrid" Grid.Column="1" Grid.Row="0" IsReadOnly="True" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+            <DockPanel Grid.Column="1" Grid.Row="1">
+                <Button Width="18">А</Button>
+                <Button Width="18">Б</Button>
+                <Button Width="18">В</Button>
+                <Button Width="18">Г</Button>
+                <Button Width="18">Д</Button>
+                <Button Width="18">Е</Button>
+                <Button Width="18">Ё</Button>
+                <Button Width="18">Ж</Button>
+                <Button Width="18">З</Button>
+                <Button Width="18">И</Button>
+                <Button Width="18">К</Button>
+                <Button Width="18">Л</Button>
+                <Button Width="18">М</Button>
+                <Button Width="18">Н</Button>
+                <Button Width="18">О</Button>
+                <Button Width="18">П</Button>
+                <Button Width="18">Р</Button>
+                <Button Width="18">С</Button>
+                <Button Width="18">Т</Button>
+                <Button Width="18">У</Button>
+                <Button Width="18">Ф</Button>
+                <Button Width="18">Х</Button>
+                <Button Width="18">Ц</Button>
+                <Button Width="18">Ч</Button>
+                <Button Width="18">Ш</Button>
+                <Button Width="18">Щ</Button>
+                <Button Width="18">Э</Button>
+                <Button Width="18">Ю</Button>
+                <Button Width="18">Я</Button>
+                <Label Name="PatientsCountBox"></Label>
+                <Button Width="100">Показать всех</Button>
+            </DockPanel>
+            <TabControl Grid.Column="1" Grid.Row="2">
                 <TabItem Header="TabItem">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <DockPanel>
+                            <StackPanel>
+                                <GroupBox Header="" Width="400">
+                                    <StackPanel>
+                                        <Label FontWeight="Bold">Регистрация пациента</Label>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Амбулаторная карта</Label>
+                                            <TextBox Name="MedicalCardNumberBox"></TextBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Фамилия</Label>
+                                            <TextBox Name="SNameBox"></TextBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Имя</Label>
+                                            <TextBox Name="FNameBox"></TextBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Отчество</Label>
+                                            <TextBox Name="MNameBox"></TextBox>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Место жительства" Width="400">
+                                    <StackPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Регион</Label>
+                                            <ComboBox Name="RegionBox" SelectedIndex="0">
+                                                <ComboBoxItem>---</ComboBoxItem>
+                                                <ComboBoxItem>Новосибирская область</ComboBoxItem>
+                                                <ComboBoxItem>Алтайский край</ComboBoxItem>
+                                                <ComboBoxItem>Амурскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Архангельская область</ComboBoxItem>
+                                                <ComboBoxItem>Астраханскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Белгородская область</ComboBoxItem>
+                                                <ComboBoxItem>Брянскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Владимирская область</ComboBoxItem>
+                                                <ComboBoxItem>Волгоградскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Вологодская область</ComboBoxItem>
+                                                <ComboBoxItem>Воронежскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Ивановская область</ComboBoxItem>
+                                                <ComboBoxItem>Иркутскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Калиниградская область</ComboBoxItem>
+                                                <ComboBoxItem>Калужскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Камчатская область</ComboBoxItem>
+                                                <ComboBoxItem>Кемеровскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Кировская область</ComboBoxItem>
+                                                <ComboBoxItem>Костромскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Курганская область</ComboBoxItem>
+                                                <ComboBoxItem>Курская область</ComboBoxItem>
+                                                <ComboBoxItem>Ленинградская область</ComboBoxItem>
+                                                <ComboBoxItem>Липецкая область</ComboBoxItem>
+                                                <ComboBoxItem>Москва</ComboBoxItem>
+                                                <ComboBoxItem>Московская область</ComboBoxItem>
+                                                <ComboBoxItem>Магаданская область</ComboBoxItem>
+                                                <ComboBoxItem>Мурманская область</ComboBoxItem>
+                                                <ComboBoxItem>Нижегородская область</ComboBoxItem>
+                                                <ComboBoxItem>Новгородскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Омская область</ComboBoxItem>
+                                                <ComboBoxItem>Оренбургскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Орловская область</ComboBoxItem>
+                                                <ComboBoxItem>Пензенскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Пермская область</ComboBoxItem>
+                                                <ComboBoxItem>Псковская область</ComboBoxItem>
+                                                <ComboBoxItem>Ростовская область</ComboBoxItem>
+                                                <ComboBoxItem>Рязанская область</ComboBoxItem>
+                                                <ComboBoxItem>Самарская область</ComboBoxItem>
+                                                <ComboBoxItem>Санкт-Петербург</ComboBoxItem>
+                                                <ComboBoxItem>Саратовская область</ComboBoxItem>
+                                                <ComboBoxItem>Сахалинскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Свердловская область</ComboBoxItem>
+                                                <ComboBoxItem>Смоленскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Тамбовская область</ComboBoxItem>
+                                                <ComboBoxItem>Тверская область</ComboBoxItem>
+                                                <ComboBoxItem>Томская область</ComboBoxItem>
+                                                <ComboBoxItem>Тульская область</ComboBoxItem>
+                                                <ComboBoxItem>Тюменская область</ComboBoxItem>
+                                                <ComboBoxItem>Ульяновская область</ComboBoxItem>
+                                                <ComboBoxItem>Челябинская область</ComboBoxItem>
+                                                <ComboBoxItem>Читинскаяобласть</ComboBoxItem>
+                                                <ComboBoxItem>Ярославская область</ComboBoxItem>
+                                                <ComboBoxItem>Еврейская авт.обл.</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Адыгея</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Башкортостан</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Бурятия</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Алтай</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Дагестан</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Ингушетия</ComboBoxItem>
+                                                <ComboBoxItem>Кабардино-Балкарская Респ.</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Калмыкия</ComboBoxItem>
+                                                <ComboBoxItem>Респ.Карачаево-Черкессия</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Карелия</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Коми</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Марий Эл</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Мордовия</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Саха (Якутия)</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Северная Осетия-Алания</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Татарстан</ComboBoxItem>
+                                                <ComboBoxItem>Респ.Тыва</ComboBoxItem>
+                                                <ComboBoxItem>Удмуртская Респ.</ComboBoxItem>
+                                                <ComboBoxItem>Респ. Хакасия</ComboBoxItem>
+                                                <ComboBoxItem>Чувашская Респ.</ComboBoxItem>
+                                                <ComboBoxItem>Алтайский край</ComboBoxItem>
+                                                <ComboBoxItem>Краснодарский край</ComboBoxItem>
+                                                <ComboBoxItem>Красноярский край</ComboBoxItem>
+                                                <ComboBoxItem>Приморский край</ComboBoxItem>
+                                                <ComboBoxItem>Ставропольский край</ComboBoxItem>
+                                                <ComboBoxItem>Хабаровский край</ComboBoxItem>
+                                                <ComboBoxItem>Агинский Бурятский авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Коми-Пермяцкий авт.окр.</ComboBoxItem>
+                                                <ComboBoxItem>Корякский авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Ненецкий авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Таймырский (Долгано-Ненецкий) авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Усть-Ордынский Бурятский авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Ханты-Мансийский авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Чукотский авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Эвенкийский авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Ямало-Ненецкий авт. окр.</ComboBoxItem>
+                                                <ComboBoxItem>Чеченская Респ.</ComboBoxItem>
+                                            </ComboBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Город</Label>
+                                            <TextBox Name="CityBox"></TextBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Адрес</Label>
+                                            <TextBox Name="AddressBox"></TextBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Телефон</Label>
+                                            <TextBox Name="PhoneBox"></TextBox>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Место работы" Width="400">
+                                    <StackPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Организация</Label>
+                                            <TextBox Name="OrganizationBox"></TextBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Профессия</Label>
+                                            <ComboBox Name="ProfessionBox" SelectedIndex="0">
+                                                <ComboBoxItem>---</ComboBoxItem>
+                                                <ComboBoxItem>Артист</ComboBoxItem>
+                                                <ComboBoxItem>Бугалтер</ComboBoxItem>
+                                                <ComboBoxItem>Врач</ComboBoxItem>
+                                                <ComboBoxItem>Дизайнер</ComboBoxItem>
+                                                <ComboBoxItem>Директор</ComboBoxItem>
+                                                <ComboBoxItem>Журналист</ComboBoxItem>
+                                                <ComboBoxItem>Инженер</ComboBoxItem>
+                                                <ComboBoxItem>Кассир</ComboBoxItem>
+                                                <ComboBoxItem>Кондитер</ComboBoxItem>
+                                                <ComboBoxItem>Медработник</ComboBoxItem>
+                                                <ComboBoxItem>Начальник</ComboBoxItem>
+                                                <ComboBoxItem>Начальник предприятия</ComboBoxItem>
+                                                <ComboBoxItem>Повар</ComboBoxItem>
+                                                <ComboBoxItem>Преподаватель</ComboBoxItem>
+                                                <ComboBoxItem>Программист</ComboBoxItem>
+                                                <ComboBoxItem>Спортсмен</ComboBoxItem>
+                                                <ComboBoxItem>Студент</ComboBoxItem>
+                                                <ComboBoxItem>Торговый работник</ComboBoxItem>
+                                                <ComboBoxItem>Ученый</ComboBoxItem>
+                                                <ComboBoxItem>Частный предприниматель</ComboBoxItem>
+                                                <ComboBoxItem>Чиновник</ComboBoxItem>
+                                                <ComboBoxItem>Школьник</ComboBoxItem>
+                                            </ComboBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Должность</Label>
+                                            <TextBox Name="PositionBox"></TextBox>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <GroupBox Header="" Width="400">
+                                    <StackPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Дата регистрации</Label>
+                                            <DatePicker Name="RegistrationDateBox"></DatePicker>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Дата рождения</Label>
+                                            <DatePicker Name="BirthDateBox"></DatePicker>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Возрастная категория</Label>
+                                            <ComboBox Name="AgeCategoryBox" SelectedIndex="0">
+                                                <ComboBoxItem>---</ComboBoxItem>
+                                                <ComboBoxItem>Новорожденный (менее 1 мес)</ComboBoxItem>
+                                                <ComboBoxItem>Грудной (1-3 месяцы)</ComboBoxItem>
+                                                <ComboBoxItem>Грудной (4-12 месяцы)</ComboBoxItem>
+                                                <ComboBoxItem>Дошкольный (1-6)</ComboBoxItem>
+                                                <ComboBoxItem>Препубератный (7-12)</ComboBoxItem>
+                                                <ComboBoxItem>Пубератный (13-18)</ComboBoxItem>
+                                                <ComboBoxItem>Юность (19-24)</ComboBoxItem>
+                                                <ComboBoxItem>Взрослый (25-30)</ComboBoxItem>
+                                                <ComboBoxItem>Взрослый (31-40)</ComboBoxItem>
+                                                <ComboBoxItem>Взрослый (41-50)</ComboBoxItem>
+                                                <ComboBoxItem>Взрослый (51-60)</ComboBoxItem>
+                                                <ComboBoxItem>Пенсионер (более 60)</ComboBoxItem>
+                                            </ComboBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Пол</Label>
+                                            <ComboBox Name="SexBox" SelectedIndex="0">
+                                                <ComboBoxItem>---</ComboBoxItem>
+                                                <ComboBoxItem>М</ComboBoxItem>
+                                                <ComboBoxItem>Ж</ComboBoxItem>
+                                            </ComboBox>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Вес</Label>
+                                            <TextBox Name="WeightBox"></TextBox>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Паспортные данные" Width="400">
+                                </GroupBox>
+                                <GroupBox Header="Регистрация и выписка пациента" Width="400">
+                                </GroupBox>
+                            </StackPanel>
+                        </DockPanel>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="TabItem">
                     <Grid Background="#FFE5E5E5"/>
