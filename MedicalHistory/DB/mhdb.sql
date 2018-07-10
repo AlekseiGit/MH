@@ -37,6 +37,18 @@ GO
 insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
 values ('12345', 'qwe', 'asd', 'zxc', '19850319', '20150118', 'zxc', 2, 78, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
 
+insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
+values ('00001', 'aaaaa', 'aaaaa', 'aaaaa', '19850319', '20150118', 'zxc', 1, 77, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+
+insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
+values ('00002', 'bbbbb', 'bbbbb', 'bbbbb', '19850319', '20150118', 'zxc', 1, 91, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+
+insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
+values ('00003', 'sdhgdhj', 'reth', 'fxnfykg', '19850319', '20150118', 'zxc', 2, 112, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+
+insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
+values ('00005', 'dfgjgfk', 'ykytui', 'ggg', '19850319', '20150118', 'zxc', 2, 99, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+
 -- //////// PROCEDURES
 
 GO

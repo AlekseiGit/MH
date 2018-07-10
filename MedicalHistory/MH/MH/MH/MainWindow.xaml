@@ -14,57 +14,25 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="CategoryListBox" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" VerticalContentAlignment="Bottom" FontSize="18" FontFamily="Aharoni" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" SelectionChanged="ListBox_SelectionChanged">
-                <ListBoxItem x:Name="a1" Content="Регистрация" Height="30"/>
-                <ListBoxItem x:Name="a2" Content="Анамнез болезни" Height="30"/>
-                <ListBoxItem x:Name="a3" Content="Анамнез жизни" Height="30"/>
-                <ListBoxItem x:Name="a4" Content="Осмотры" Height="30"/>
-                <ListBoxItem x:Name="a5" Content="Лечение" Height="30"/>
-                <ListBoxItem x:Name="a6" Content="Обследования" Height="30"/>
-                <ListBoxItem x:Name="a7" Content="Диагноз и рекомендации" Height="30"/>
-                <ListBoxItem x:Name="a8" Content="Документы" Height="30"/>
-                <ListBoxItem x:Name="a9" Content="Записать в базу" Height="30"/>
-                <ListBoxItem x:Name="a10" Content="Новый пациент" Height="30"/>
-            </ListBox>
-            <DataGrid x:Name="PatientsGrid" Grid.Column="1" Grid.Row="0" IsReadOnly="True" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-            <DockPanel Grid.Column="1" Grid.Row="1">
-                <Button Width="18">А</Button>
-                <Button Width="18">Б</Button>
-                <Button Width="18">В</Button>
-                <Button Width="18">Г</Button>
-                <Button Width="18">Д</Button>
-                <Button Width="18">Е</Button>
-                <Button Width="18">Ё</Button>
-                <Button Width="18">Ж</Button>
-                <Button Width="18">З</Button>
-                <Button Width="18">И</Button>
-                <Button Width="18">К</Button>
-                <Button Width="18">Л</Button>
-                <Button Width="18">М</Button>
-                <Button Width="18">Н</Button>
-                <Button Width="18">О</Button>
-                <Button Width="18">П</Button>
-                <Button Width="18">Р</Button>
-                <Button Width="18">С</Button>
-                <Button Width="18">Т</Button>
-                <Button Width="18">У</Button>
-                <Button Width="18">Ф</Button>
-                <Button Width="18">Х</Button>
-                <Button Width="18">Ц</Button>
-                <Button Width="18">Ч</Button>
-                <Button Width="18">Ш</Button>
-                <Button Width="18">Щ</Button>
-                <Button Width="18">Э</Button>
-                <Button Width="18">Ю</Button>
-                <Button Width="18">Я</Button>
-                <Label Name="PatientsCountBox"></Label>
-                <Button Width="100">Показать всех</Button>
-            </DockPanel>
-            <TabControl Grid.Column="1" Grid.Row="2">
-                <TabItem Header="TabItem">
+            <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+                <Image Name="RegistrationImg" Width="64" Height="64"/>
+                <Button Name="RegistrationBtn" Width="240" Content="Регистрация" Height="30"/>
+                <Image Name="IllAnamnesisImg" Width="64" Height="64"/>
+                <Button Name="IllAnamnesisBtn" Width="240" Content="Анамнез болезни" Height="30"/>
+                <Button Name="a3" Content="Анамнез жизни" Height="30"/>
+                <Button Name="a4" Content="Осмотры" Height="30"/>
+                <Button Name="a5" Width="240" Content="Лечение" Height="30"/>
+                <Button Name="a6" Width="240" Content="Обследования" Height="30"/>
+                <Button Name="a7" Width="240" Content="Диагноз и рекомендации" Height="30"/>
+                <Button Name="a8" Content="Документы" Height="30"/>
+                <Button Name="a9" Content="Записать в базу" Height="30"/>
+                <Button Name="a10" Content="Новый пациент" Height="30"/>
+            </StackPanel>
+            <TabControl Grid.Column="1" Grid.Row="2" Margin="0,-23,0,0">
+                <TabItem Header="">
                     <Grid Background="#FFE5E5E5">
                         <DockPanel>
                             <StackPanel>
@@ -293,10 +261,62 @@
                         </DockPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Header="TabItem">
+                <TabItem Header="">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="">
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
             </TabControl>
+            <DataGrid x:Name="PatientsGrid" Grid.Column="1" Grid.Row="0" IsReadOnly="True" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+            <DockPanel Grid.Column="1" Grid.Row="1">
+                <Button Width="18">А</Button>
+                <Button Width="18">Б</Button>
+                <Button Width="18">В</Button>
+                <Button Width="18">Г</Button>
+                <Button Width="18">Д</Button>
+                <Button Width="18">Е</Button>
+                <Button Width="18">Ё</Button>
+                <Button Width="18">Ж</Button>
+                <Button Width="18">З</Button>
+                <Button Width="18">И</Button>
+                <Button Width="18">К</Button>
+                <Button Width="18">Л</Button>
+                <Button Width="18">М</Button>
+                <Button Width="18">Н</Button>
+                <Button Width="18">О</Button>
+                <Button Width="18">П</Button>
+                <Button Width="18">Р</Button>
+                <Button Width="18">С</Button>
+                <Button Width="18">Т</Button>
+                <Button Width="18">У</Button>
+                <Button Width="18">Ф</Button>
+                <Button Width="18">Х</Button>
+                <Button Width="18">Ц</Button>
+                <Button Width="18">Ч</Button>
+                <Button Width="18">Ш</Button>
+                <Button Width="18">Щ</Button>
+                <Button Width="18">Э</Button>
+                <Button Width="18">Ю</Button>
+                <Button Width="18">Я</Button>
+                <Label Name="PatientsCountBox"></Label>
+                <Button Width="100">Показать всех</Button>
+            </DockPanel>
         </Grid>
     </Grid>
 </Window>

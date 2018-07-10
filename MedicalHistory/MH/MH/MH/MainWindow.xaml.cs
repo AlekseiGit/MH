@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,8 @@ namespace MH
             InitializeComponent();
             WindowState = WindowState.Maximized;
             Core = new Core();
+
+            RegistrationImg.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/imgs/registration.png"));
 
             LoadPatients();
         }
