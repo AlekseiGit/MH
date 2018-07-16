@@ -1,5 +1,6 @@
 drop table dbo.[Patient]
 drop procedure if exists [dbo].[p_get_all_patients]
+drop procedure if exists [dbo].[p_get_all_patients_by_letter]
 
 -- //////// TABLES
 
@@ -35,19 +36,19 @@ CONSTRAINT [PK_Patient] PRIMARY KEY CLUSTERED
 GO
 
 insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
-values ('12345', 'qwe', 'asd', 'zxc', '19850319', '20150118', 'zxc', 2, 78, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+values ('12345', N'ааааа', 'asd', 'zxc', '19850319', '20150118', 'zxc', 2, 78, N'Ленинградская область', 'dfgsd', N'упкуепкренк', '1234567', 'hsgdvfhsgadvhf', N'Инженер', 'hsagdfhgshd')
 
 insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
-values ('00001', 'aaaaa', 'aaaaa', 'aaaaa', '19850319', '20150118', 'zxc', 1, 77, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+values ('00001', N'ббббб', 'aaaaa', 'aaaaa', '19850319', '20150118', 'zxc', 1, 77, N'Ленинградская область', 'dfgsd', N'ыкренокнг', '1234567', 'hsgdvfhsgadvhf', N'Инженер', 'hsagdfhgshd')
 
 insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
-values ('00002', 'bbbbb', 'bbbbb', 'bbbbb', '19850319', '20150118', 'zxc', 1, 91, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+values ('00002', N'ввввв', 'bbbbb', 'bbbbb', '19850319', '20150118', 'zxc', 1, 91, N'Ленинградская область', 'dfgsd', N'rhety 6', '1234567', 'hsgdvfhsgadvhf', N'Инженер', 'hsagdfhgshd')
 
 insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
-values ('00003', 'sdhgdhj', 'reth', 'fxnfykg', '19850319', '20150118', 'zxc', 2, 112, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+values ('00003', N'ддддд', 'reth', 'fxnfykg', '19850319', '20150118', 'zxc', 2, 112, N'Ленинградская область', 'dfgsd', N'ыпиыыетн д4к2', '1234567', 'hsgdvfhsgadvhf', N'Инженер', 'hsagdfhgshd')
 
 insert into [dbo].[Patient] (MedicalCardNumber, SName, FName, MName, BirthDate, RegistrationDate, AgeCategory, Sex, Weight, Region, City, Address, Phone, Organization, Profession, Position)
-values ('00005', 'dfgjgfk', 'ykytui', 'ggg', '19850319', '20150118', 'zxc', 2, 99, 'shfdjh', 'dfgsd', 'jdgjfkskgydkgsykjsgdj', '1234567', 'hsgdvfhsgadvhf', 'dgsfg', 'hsagdfhgshd')
+values ('00005', N'ввв', 'ykytui', 'ggg', '19850319', '20150118', 'zxc', 2, 99, N'Ленинградская область', 'dfgsd', N'аокнгокн', '1234567', 'hsgdvfhsgadvhf', N'Инженер', 'hsagdfhgshd')
 
 -- //////// PROCEDURES
 
@@ -78,5 +79,38 @@ BEGIN
 	from
 		[dbo].[Patient] (nolock)
 	order by
-		[SName] desc
+		[SName] asc
+END;
+
+GO
+
+CREATE PROCEDURE [dbo].[p_get_all_patients_by_letter]
+@letter nvarchar(1)
+
+AS
+BEGIN
+	select
+		[ID],
+		[MedicalCardNumber],
+		[SName],
+		[FName],
+		[MName],
+		[BirthDate],
+		[RegistrationDate],
+		[AgeCategory],
+		[Sex],
+		[Weight],
+		[Region],
+		[City],
+		[Address],
+		[Phone],
+		[Organization],
+		[Profession],
+		[Position]
+	from
+		[dbo].[Patient] (nolock)
+	where
+		left([SName], 1) = @letter
+	order by
+		[SName] asc
 END;

@@ -14,31 +14,37 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="210"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
-                <Image Name="RegistrationImg" Width="64" Height="64"/>
-                <Button Name="RegistrationBtn" Width="240" Content="Регистрация" Height="30"/>
-                <Image Name="IllAnamnesisImg" Width="64" Height="64"/>
-                <Button Name="IllAnamnesisBtn" Width="240" Content="Анамнез болезни" Height="30"/>
-                <Button Name="a3" Content="Анамнез жизни" Height="30"/>
-                <Button Name="a4" Content="Осмотры" Height="30"/>
-                <Button Name="a5" Width="240" Content="Лечение" Height="30"/>
-                <Button Name="a6" Width="240" Content="Обследования" Height="30"/>
-                <Button Name="a7" Width="240" Content="Диагноз и рекомендации" Height="30"/>
-                <Button Name="a8" Content="Документы" Height="30"/>
-                <Button Name="a9" Content="Записать в базу" Height="30"/>
-                <Button Name="a10" Content="Новый пациент" Height="30"/>
+                <Image Name="RegistrationImg" Width="50" Height="50"/>
+                <Button Name="RegistrationBtn" Width="200" Content="Регистрация" Height="30" Click="SectionSelect"/>
+                <Image Name="IllAnamnesisImg" Width="50" Height="50"/>
+                <Button Name="IllAnamnesisBtn" Width="200" Content="Анамнез болезни" Height="30" Click="SectionSelect"/>
+                <Image Name="LifeAnamnesisImg" Width="50" Height="50"/>
+                <Button Name="LifeAnamnesisBtn" Width="200" Content="Анамнез жизни" Height="30" Click="SectionSelect"/>
+                <Image Name="VisitsImg" Width="50" Height="50"/>
+                <Button Name="VisitsBtn" Width="200" Content="Осмотры" Height="30" Click="SectionSelect"/>
+                <Image Name="TherapyImg" Width="50" Height="50"/>
+                <Button Name="TherapyBtn" Width="200" Content="Лечение" Height="30" Click="SectionSelect"/>
+                <Image Name="SurveysImg" Width="50" Height="50"/>
+                <Button Name="SurveysBtn" Width="200" Content="Обследования" Height="30" Click="SectionSelect"/>
+                <Image Name="DiagnosisImg" Width="50" Height="50"/>
+                <Button Name="DiagnosisBtn" Width="200" Content="Диагноз и рекомендации" Height="30" Click="SectionSelect"/>
+                <Image Name="DocumentsImg" Width="50" Height="50"/>
+                <Button Name="DocumentsBtn" Width="200" Content="Документы" Height="30" Click="SectionSelect"/>
+                <Button Name="a9" Width="200" Content="Записать в базу" Height="30" Click="SectionSelect"/>
+                <Button Name="a10" Width="200" Content="Новый пациент" Height="30" Click="SectionSelect"/>
             </StackPanel>
             <TabControl Grid.Column="1" Grid.Row="2" Margin="0,-23,0,0">
-                <TabItem Header="">
+                <TabItem Name="RegistrationTab" Header="">
                     <Grid Background="#FFE5E5E5">
-                        <DockPanel>
+                        <DockPanel HorizontalAlignment="Left">
                             <StackPanel>
+                                <Label FontWeight="Bold">Регистрация пациента</Label>
                                 <GroupBox Header="" Width="400">
                                     <StackPanel>
-                                        <Label FontWeight="Bold">Регистрация пациента</Label>
                                         <DockPanel>
                                             <Label Width="170" FontWeight="Bold">Амбулаторная карта</Label>
                                             <TextBox Name="MedicalCardNumberBox"></TextBox>
@@ -261,61 +267,307 @@
                         </DockPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Header="">
+                <TabItem Name="IllAnamnesisTab" Header="">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel HorizontalAlignment="Left">
+                            <Label FontWeight="Bold">Анамнез болезни</Label>
+                            <GroupBox Header="" Width="900">
+                                <DockPanel Width="900">
+                                    <Label Width="170" FontWeight="Bold">Диагноз при поступлении</Label>
+                                    <TextBox Name="MedcalCardNumberBo" Height="45" Width="600" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                    <Button Width="80">Поставить</Button>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="" Width="900">
+                                <StackPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Первые проявления заболевания возникли в возрасте</Label>
+                                        <ComboBox Name="MedicalCardNumberBo" Width="100"></ComboBox>
+                                        <Label Width="50" FontWeight="Bold">или</Label>
+                                        <ComboBox Name="MedicalCardNberBo" Width="50"></ComboBox>
+                                        <ComboBox Name="MedicalCaNumberBo" Width="100"></ComboBox>
+                                        <Label Width="50" FontWeight="Bold">назад</Label>
+                                        <Button Width="80">Расчитать</Button>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">На начало заболевания влияли</Label>
+                                        <TextBox Name="SNameBo" Height="45" Width="600" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                        <Button Width="80">Выбрать</Button>
+                                    </DockPanel>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Ранее проводимое лечение" Width="900">
+                                <StackPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Ранее проводимое лечение</Label>
+                                        <TextBox Name="SNаaeBo" Height="45" Width="600" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                        <Button Width="80">Выбрать</Button>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Результаты от лечения</Label>
+                                        <ComboBox Name="MedicalCardNumerBo" Width="100" HorizontalAlignment="Left"></ComboBox>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Продолжительность ремиссии от</Label>
+                                        <ComboBox Name="MdicalCardNberBo" Width="50"></ComboBox>
+                                        <ComboBox Name="MedcalCaNumberBo" Width="100"></ComboBox>
+                                        <Label Width="170" FontWeight="Bold">до</Label>
+                                        <ComboBox Name="MedialCardNberBo" Width="50"></ComboBox>
+                                        <ComboBox Name="MedilCaNumberBo" Width="100"></ComboBox>
+                                        <CheckBox>Отсутствие ремиссии</CheckBox>
+                                    </DockPanel>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Последнее обострение" Width="900">
+                                <StackPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Начало последнего обострения</Label>
+                                        <ComboBox Name="MedicalCardNbBo" Width="50"></ComboBox>
+                                        <ComboBox Name="MedicalCaNerBo" Width="100"></ComboBox>
+                                        <Label Width="50" FontWeight="Bold" HorizontalAlignment="Left">назад</Label>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Провоцируют обострение</Label>
+                                        <TextBox Name="SNamfeBo" Height="45" Width="600" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                        <Button Width="80">Выбрать</Button>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Проведено лечение</Label>
+                                        <TextBox Name="SNamdfeBo" Height="45" Width="600" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                        <Button Width="80">Выбрать</Button>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <Label Width="170" FontWeight="Bold">Результаты от лечения</Label>
+                                        <ComboBox Name="MecalCardNumerBo" Width="100" HorizontalAlignment="Left"></ComboBox>
+                                    </DockPanel>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="LifeAnamnesisTab" Header="">
+                    <Grid Background="#FFE5E5E5">
+                        <DockPanel HorizontalAlignment="Left">
+                            <StackPanel>
+                                <Label FontWeight="Bold">Анамнез жизни</Label>
+                                <GroupBox Header="Сопутствующие заболевания" Width="900">
+                                    <DockPanel>
+                                        <StackPanel Width="400">
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">ЛОР органы и полость рта</Label>
+                                                <TextBox Name="MecalCardNumberBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">ЖКТ</Label>
+                                                <TextBox Name="SNeBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">ЦНС</Label>
+                                                <TextBox Name="FNaeBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Аллергические реакции</Label>
+                                                <TextBox Name="MNBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Дыхательные пути</Label>
+                                                <TextBox Name="MameB" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                        </StackPanel>
+                                        <StackPanel Width="400">
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Мочевыд. система</Label>
+                                                <TextBox Name="MicalCardNumberBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Глистные инвазии</Label>
+                                                <TextBox Name="SaeBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Сопутствующие кожн. забол.</Label>
+                                                <TextBox Name="FamBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Атопические заболевания</Label>
+                                                <TextBox Name="MamBo" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Label Width="170" FontWeight="Bold">Другое</Label>
+                                                <TextBox Name="MamB" Height="45" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                            </DockPanel>
+                                        </StackPanel>
+                                        <Button Width="80">Выбрать</Button>
+                                    </DockPanel>
+                                </GroupBox>
+                                <GroupBox Header="" Width="900">
+                                    <DockPanel>
+                                        <GroupBox Header="Характер питания" Width="280">
+                                            <StackPanel>
+                                                <RadioButton>Обычный</RadioButton>
+                                                <RadioButton>Гиппоаллергенный</RadioButton>
+                                            </StackPanel>
+                                        </GroupBox>
+                                        <GroupBox Header="Бытовые условия и режим" Width="280">
+                                            <StackPanel>
+                                                <RadioButton>Обычные</RadioButton>
+                                                <RadioButton>Гиппоаллергенные</RadioButton>
+                                            </StackPanel>
+                                        </GroupBox>
+                                        <StackPanel Width="280">
+                                            <CheckBox>Наличие домашних животных</CheckBox>
+                                            <CheckBox>Наличие вредных привычек</CheckBox>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </GroupBox>
+                                <GroupBox Header="Семейный анамнез" Width="900">
+                                    <DockPanel>
+                                        <TextBox Name="OrganizaionBo" Width="800" Height="80" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                        <Button Width="80">Выбрать</Button>
+                                    </DockPanel>
+                                </GroupBox>
+                            </StackPanel>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="VisitsTab" Header="">
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
-                <TabItem Header="">
-                    <Grid Background="#FFE5E5E5"/>
+                <TabItem Name="TherapyTab" Header="">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel HorizontalAlignment="Left">
+                            <Label FontWeight="Bold">Лечение пациента</Label>
+                            <TabControl Width="900" Height="450">
+                                <TabItem Header="Назначенное лечение">
+                                    <Grid Background="#FFE5E5E5">
+                                        <StackPanel>
+                                            <DataGrid Name="Grid" Height="300" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+                                            <DockPanel>
+                                                <Button Width="150">Добавить новое</Button>
+                                                <Button Width="150">Удалить текущее</Button>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Фототерапия подробно">
+                                    <Grid Background="#FFE5E5E5">
+                                        <StackPanel>
+                                            <DataGrid Name="Gri" Height="300" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+                                            <DockPanel>
+                                                <Button Width="300">Добавить новую процедуру/редактировать старые</Button>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <GroupBox Header="" Width="200">
+                                                    <StackPanel>
+                                                        <Label Width="170" FontWeight="Bold">Вес пациента:</Label>
+                                                        <Label Width="170" FontWeight="Bold">Полученная доза:</Label>
+                                                    </StackPanel>
+                                                </GroupBox>
+                                                <GroupBox Header="">
+                                                    <StackPanel>
+                                                        <DockPanel>
+                                                            <Button Width="230">Вывести все полученные курсы</Button>
+                                                            <Button Width="230">Вывести последний курс</Button>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                            <Button Width="200">Вывести курс №</Button>
+                                                            <TextBox Width="30"></TextBox>
+                                                            <Button Width="230">Вывести все курсы кроме последнего</Button>
+                                                        </DockPanel>
+                                                    </StackPanel>
+                                                </GroupBox>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </TabItem>
+                            </TabControl>
+                        </StackPanel>
+                    </Grid>
                 </TabItem>
-                <TabItem Header="">
-                    <Grid Background="#FFE5E5E5"/>
+                <TabItem Name="SurveysTab" Header="">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel>
+                            <Label FontWeight="Bold">Обследования</Label>
+                            <DockPanel HorizontalAlignment="Left">
+                                <GroupBox Header="" Width="250">
+                                    <StackPanel>
+                                        <Label Width="170" FontWeight="Bold">Список обследований</Label>
+                                        <DataGrid Name="Gi" Height="300" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+                                        <Button>Добавить новое</Button>
+                                        <Button>Удалить текущее</Button>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="" Width="550">
+                                    <StackPanel>
+                                        <DockPanel>
+                                            <Label Width="170" FontWeight="Bold">Дата обследования</Label>
+                                            <DatePicker Name="BirtateBox"></DatePicker>
+                                        </DockPanel>
+                                        <GroupBox Header="Исследование крови" Width="550">
+                                            <DockPanel>
+                                                <TextBox Name="OrizaonBo" Width="800" Height="80" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                                <Button Width="80">Выбрать</Button>
+                                            </DockPanel>
+                                        </GroupBox>
+                                        <GroupBox Header="Исследование кала" Width="550">
+                                            <DockPanel>
+                                                <TextBox Name="OrizaoBo" Width="800" Height="80" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                                <Button Width="80">Выбрать</Button>
+                                            </DockPanel>
+                                        </GroupBox>
+                                        <GroupBox Header="Другие методы исследования" Width="550">
+                                            <DockPanel>
+                                                <TextBox Name="OrizonBo" Width="800" Height="80" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                                                <Button Width="80">Выбрать</Button>
+                                            </DockPanel>
+                                        </GroupBox>
+                                    </StackPanel>
+                                </GroupBox>
+                            </DockPanel>
+                        </StackPanel>
+                    </Grid>
                 </TabItem>
-                <TabItem Header="">
-                    <Grid Background="#FFE5E5E5"/>
+                <TabItem Name="DiagnosisTab" Header="">
+                    <Grid Background="#FFE5E5E5">
+                    </Grid>
                 </TabItem>
-                <TabItem Header="">
-                    <Grid Background="#FFE5E5E5"/>
-                </TabItem>
-                <TabItem Header="">
-                    <Grid Background="#FFE5E5E5"/>
-                </TabItem>
-                <TabItem Header="">
-                    <Grid Background="#FFE5E5E5"/>
+                <TabItem Name="DocumentsTab" Header="">
+                    <Grid Background="#FFE5E5E5">
+                    </Grid>
                 </TabItem>
             </TabControl>
-            <DataGrid x:Name="PatientsGrid" Grid.Column="1" Grid.Row="0" IsReadOnly="True" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+            <DataGrid x:Name="PatientsGrid" Grid.Column="1" Grid.Row="0" IsReadOnly="True" SelectionChanged="PatientsGrid_SelectionChanged" LoadingRow="PatientsGrid_LoadingRow" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" AutoGeneratedColumns="PatientsGridColumnsGenerated"/>
             <DockPanel Grid.Column="1" Grid.Row="1">
-                <Button Width="18">А</Button>
-                <Button Width="18">Б</Button>
-                <Button Width="18">В</Button>
-                <Button Width="18">Г</Button>
-                <Button Width="18">Д</Button>
-                <Button Width="18">Е</Button>
-                <Button Width="18">Ё</Button>
-                <Button Width="18">Ж</Button>
-                <Button Width="18">З</Button>
-                <Button Width="18">И</Button>
-                <Button Width="18">К</Button>
-                <Button Width="18">Л</Button>
-                <Button Width="18">М</Button>
-                <Button Width="18">Н</Button>
-                <Button Width="18">О</Button>
-                <Button Width="18">П</Button>
-                <Button Width="18">Р</Button>
-                <Button Width="18">С</Button>
-                <Button Width="18">Т</Button>
-                <Button Width="18">У</Button>
-                <Button Width="18">Ф</Button>
-                <Button Width="18">Х</Button>
-                <Button Width="18">Ц</Button>
-                <Button Width="18">Ч</Button>
-                <Button Width="18">Ш</Button>
-                <Button Width="18">Щ</Button>
-                <Button Width="18">Э</Button>
-                <Button Width="18">Ю</Button>
-                <Button Width="18">Я</Button>
+                <Button Width="18" Click="PatientsByLetter">А</Button>
+                <Button Width="18" Click="PatientsByLetter">Б</Button>
+                <Button Width="18" Click="PatientsByLetter">В</Button>
+                <Button Width="18" Click="PatientsByLetter">Г</Button>
+                <Button Width="18" Click="PatientsByLetter">Д</Button>
+                <Button Width="18" Click="PatientsByLetter">Е</Button>
+                <Button Width="18" Click="PatientsByLetter">Ё</Button>
+                <Button Width="18" Click="PatientsByLetter">Ж</Button>
+                <Button Width="18" Click="PatientsByLetter">З</Button>
+                <Button Width="18" Click="PatientsByLetter">И</Button>
+                <Button Width="18" Click="PatientsByLetter">К</Button>
+                <Button Width="18" Click="PatientsByLetter">Л</Button>
+                <Button Width="18" Click="PatientsByLetter">М</Button>
+                <Button Width="18" Click="PatientsByLetter">Н</Button>
+                <Button Width="18" Click="PatientsByLetter">О</Button>
+                <Button Width="18" Click="PatientsByLetter">П</Button>
+                <Button Width="18" Click="PatientsByLetter">Р</Button>
+                <Button Width="18" Click="PatientsByLetter">С</Button>
+                <Button Width="18" Click="PatientsByLetter">Т</Button>
+                <Button Width="18" Click="PatientsByLetter">У</Button>
+                <Button Width="18" Click="PatientsByLetter">Ф</Button>
+                <Button Width="18" Click="PatientsByLetter">Х</Button>
+                <Button Width="18" Click="PatientsByLetter">Ц</Button>
+                <Button Width="18" Click="PatientsByLetter">Ч</Button>
+                <Button Width="18" Click="PatientsByLetter">Ш</Button>
+                <Button Width="18" Click="PatientsByLetter">Щ</Button>
+                <Button Width="18" Click="PatientsByLetter">Э</Button>
+                <Button Width="18" Click="PatientsByLetter">Ю</Button>
+                <Button Width="18" Click="PatientsByLetter">Я</Button>
                 <Label Name="PatientsCountBox"></Label>
-                <Button Width="100">Показать всех</Button>
+                <Button Width="100" Click="AllPatients">Показать всех</Button>
             </DockPanel>
         </Grid>
     </Grid>

@@ -78,6 +78,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core.cs" />
+    <Compile Include="DataModels\IllAnamnesis.cs" />
+    <Compile Include="DataModels\LifeAnamnesis.cs" />
     <Compile Include="DataModels\Patient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
